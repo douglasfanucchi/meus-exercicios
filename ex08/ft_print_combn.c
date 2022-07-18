@@ -27,11 +27,9 @@ void	ft_print_comma(void)
 void	ft_print_combn_recursive(int n, int i, char *prevn)
 {
 	char	number;
-	int		limit;
 	int		j;
 
-	limit = 10 - n;
-	while (i <= limit)
+	while (i <= 10 - n)
 	{
 		number = i + '0';
 		if (n > 1)
@@ -43,7 +41,8 @@ void	ft_print_combn_recursive(int n, int i, char *prevn)
 		{
 			j = 0;
 			while (j < ARRSIZE)
-				write(1, &prevn[j++], 1);
+				if (prevn[j++] != '\0')
+					write(1, &prevn[j - 1], 1);
 			write(1, &number, 1);
 			g_comb_printed++;
 			ft_print_comma();
