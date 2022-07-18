@@ -16,8 +16,6 @@
 int	g_total_comb;
 int	g_comb_printed;
 
-void	ft_putnbr(int x);
-
 void	ft_print_comma(void)
 {
 	if (g_comb_printed != g_total_comb)
